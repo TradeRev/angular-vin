@@ -1,6 +1,8 @@
 
 function vinInputDirective(vinValidatorService) {
 
+  vinInputController.$inject = ["$scope", "el", "attrs", "ctrl"];
+
   function vinInputController(scope, el, attrs, ctrl) {
     // Set max length attribute
     el.attr('maxlength', vinValidatorService.vinLength);
