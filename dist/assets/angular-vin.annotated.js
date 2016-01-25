@@ -104,7 +104,14 @@
     return response;
   }
   angular.module('angular-vin').factory('vinValidatorService', vinValidatorService);
+  vinInputDirective.$inject = ['vinValidatorService'];
   function vinInputDirective(vinValidatorService) {
+    vinInputController.$inject = [
+      '$scope',
+      'el',
+      'attrs',
+      'ctrl'
+    ];
     function vinInputController(scope, el, attrs, ctrl) {
       el.attr('maxlength', vinValidatorService.vinLength);
       function checkChars(val) {

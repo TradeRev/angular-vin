@@ -127,10 +127,13 @@ function vinValidatorService() {
 }
 
 angular.module('angular-vin')
-       .factory('vinValidatorService', vinValidatorService);
+  .factory('vinValidatorService', vinValidatorService);
 
+vinInputDirective.$inject = ["vinValidatorService"];
 
 function vinInputDirective(vinValidatorService) {
+
+  vinInputController.$inject = ["$scope", "el", "attrs", "ctrl"];
 
   function vinInputController(scope, el, attrs, ctrl) {
     // Set max length attribute
@@ -206,7 +209,7 @@ function vinInputDirective(vinValidatorService) {
 }
 
 angular.module('angular-vin')
-       .directive('vinInput', vinInputDirective);
+  .directive('vinInput', vinInputDirective);
 
 
 }(window, angular));
