@@ -1,3 +1,4 @@
+vinInputDirective.$inject = ["vinValidatorService"];
 
 function vinInputDirective(vinValidatorService) {
 
